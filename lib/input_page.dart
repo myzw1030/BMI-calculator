@@ -17,6 +17,7 @@ class InputPage extends StatefulWidget {
 class _InputPageState extends State<InputPage> {
   Gender selectedGender;
   int height = 180;
+  int weight = 60;
 
   @override
   Widget build(BuildContext context) {
@@ -124,6 +125,51 @@ class _InputPageState extends State<InputPage> {
                   Expanded(
                     child: ReusabledCard(
                       color: kActiveCardColor,
+                      cardChild: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Text(
+                            '体重',
+                            style: kLabelTextStyle,
+                          ),
+                          Text(
+                            weight.toString(),
+                            style: kNumberTextStyle,
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              FloatingActionButton(
+                                backgroundColor: Color(0xFF4C4F5E),
+                                child: Icon(
+                                  Icons.add,
+                                  color: Colors.white,
+                                ),
+                                onPressed: (() {
+                                  setState(() {
+                                    weight++;
+                                  });
+                                }),
+                              ),
+                              SizedBox(
+                                width: 10.0,
+                              ),
+                              FloatingActionButton(
+                                backgroundColor: Color(0xFF4C4F5E),
+                                child: Icon(
+                                  Icons.add,
+                                  color: Colors.white,
+                                ),
+                                onPressed: (() {
+                                  setState(() {
+                                    weight--;
+                                  });
+                                }),
+                              ),
+                            ],
+                          )
+                        ],
+                      ),
                     ),
                   ),
                   Expanded(
