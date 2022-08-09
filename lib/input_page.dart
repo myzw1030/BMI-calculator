@@ -1,3 +1,4 @@
+import 'package:bmi_calculator/result_page.dart';
 import 'package:flutter/material.dart';
 import 'icon_content.dart';
 import 'reusable_card.dart';
@@ -142,6 +143,7 @@ class _InputPageState extends State<InputPage> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               RoundIconButton(
+                                heroTag: 'hero1',
                                 icon: FontAwesomeIcons.minus,
                                 onPressed: () {
                                   setState(() {
@@ -153,6 +155,7 @@ class _InputPageState extends State<InputPage> {
                                 width: 10.0,
                               ),
                               RoundIconButton(
+                                heroTag: 'hero2',
                                 icon: FontAwesomeIcons.plus,
                                 onPressed: () {
                                   setState(() {
@@ -184,6 +187,7 @@ class _InputPageState extends State<InputPage> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               RoundIconButton(
+                                heroTag: 'hero3',
                                 icon: FontAwesomeIcons.minus,
                                 onPressed: () {
                                   setState(() {
@@ -195,6 +199,7 @@ class _InputPageState extends State<InputPage> {
                                 width: 10.0,
                               ),
                               RoundIconButton(
+                                heroTag: 'hero4',
                                 icon: FontAwesomeIcons.plus,
                                 onPressed: () {
                                   setState(() {
@@ -211,11 +216,23 @@ class _InputPageState extends State<InputPage> {
                 ],
               ),
             ),
-            Container(
-              color: kBottomContainerColor,
-              margin: EdgeInsets.only(top: 10.0),
-              width: double.infinity,
-              height: kBottomContainerHeight,
+            GestureDetector(
+              onTap: (() {
+                print('aaa');
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => ResultsPage(),
+                  ),
+                );
+              }),
+              child: Container(
+                child: Text('CALCULATE'),
+                color: kBottomContainerColor,
+                margin: EdgeInsets.only(top: 10.0),
+                width: double.infinity,
+                height: kBottomContainerHeight,
+              ),
             )
           ],
         ));
