@@ -9,14 +9,17 @@ class RoundIconButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return FloatingActionButton(
-      child: Icon(
-        icon,
-        color: Colors.white,
+    return Container(
+      width: 40.0,
+      child: FloatingActionButton(
+        child: Icon(
+          icon,
+          color: Colors.white,
+        ),
+        heroTag: heroTag,
+        backgroundColor: Color(0xFF4C4F5E),
+        onPressed: onPressed,
       ),
-      heroTag: heroTag,
-      backgroundColor: Color(0xFF4C4F5E),
-      onPressed: onPressed,
     );
   }
 }

@@ -106,7 +106,7 @@ class _InputPageState extends State<InputPage> {
                         enabledThumbRadius: 15.0,
                       ),
                       overlayShape: RoundSliderOverlayShape(
-                        overlayRadius: 30.0,
+                        overlayRadius: 20.0,
                       ),
                     ),
                     child: Slider(
